@@ -9,7 +9,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Domain adaptation for mapping Cashew crops in Africa',
-  tagline: 'Full code documentation',
+  tagline: 'Full code documentation for MSc thesis',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

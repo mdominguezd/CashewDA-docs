@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcashew_da_docs=self.webpackChunkcashew_da_docs||[]).push([[3951],{2055:e=>{e.exports=JSON.parse('{"permalink":"/CashewDA-docs/blog/tags/facebook","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

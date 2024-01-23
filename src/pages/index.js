@@ -16,11 +16,12 @@ function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <img src={require('@site/static/img/DA-removebg-preview.png').default} width = '120' />
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            Get familiar with the problem 🤓
           </Link>
         </div>
       </div>

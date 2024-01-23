@@ -2,46 +2,41 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introduction to the problem
 
-Let's discover **Docusaurus in less than 5 minutes**.
+## Food security
 
-## Getting Started
+## Deforestation
 
-Get started by **creating a new site**.
+## Crop mapping
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## Domain adaptation
 
-### What you'll need
+## Research questions
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+* 
+* 
 
-## Generate a new site
+## Get ready 
 
-Generate a new Docusaurus site using the **classic template**.
+### Download the datasets
 
-The classic template will automatically be added to your project after you run the command:
+#### Directly through Dropbox
 
-```bash
-npm init docusaurus@latest my-website classic
+Click this [link](https://www.dropbox.com/scl/fo/ozyb8j2qx21secw2scocq/h?rlkey=1gyptmas8bnxdhmc0j7toi17r&dl=0) to access the data and download it directly to your local machine.
+
+#### Using bash
+
+```
+    #!/bin/bash
+
+    # Download three splits for Tanzania
+    wget -O Tanzania1.zip -q --show-progress https://www.dropbox.com/scl/fi/ueafajskwc5qckynwl7af/PlanetTanzania_18_patch256_split1.zip?rlkey=mf68gq19rs7qyj03rj6tx5250&dl=0 
+    wget -O Tanzania2.zip -q --show-progress https://www.dropbox.com/scl/fi/pj7su9q8f422k06zy6oyf/PlanetTanzania_18_patch256_split2.zip?rlkey=8xw9al4h4i46h9c9b3azqa8e4&dl=0 
+    wget -O Tanzania3.zip -q --show-progress https://www.dropbox.com/scl/fi/mhipwkf42vl8dluo4d6uu/PlanetTanzania_18_patch256_split3.zip?rlkey=2jtyw1n4u9wjibn3jnvduo717&dl=0 
+    
+    wget -O IvoryCoast1.zip -q --show-progress https://www.dropbox.com/s/mn53y84ahj4y0vj/PlanetIvoryCoast_18_patch256_split1.zip?dl=0
+    wget -O IvoryCoast2.zip -q --show-progress https://www.dropbox.com/scl/fi/6pxnc69et16gncsdd11ys/PlanetIvoryCoast_18_patch256_split2.zip?rlkey=xs0ae6o6nnpelkdi5gthq0x8v&dl=0
+    wget -O IvoryCoast3.zip -q --show-progress https://www.dropbox.com/scl/fi/37ool0ctxlc43quovnvs7/PlanetIvoryCoast_18_patch256_split3.zip?rlkey=i8fs18b99vh0wmdvtj25gyhg5&dl=0
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.

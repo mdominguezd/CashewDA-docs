@@ -4,32 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Data',
+    Svg: require('@site/static/img/Data.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Planet NICFI imagery from Ivory Coast (Source domain) and Tanzania (Target domain).
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Semantic segmentation task',
+    Svg: require('@site/static/img/semanticSeg.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Semantic segmentation for cashew crop mapping was performed using UNet architecture with the addition of attention gates.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Domain adaptation',
+    Svg: require('@site/static/img/UDA.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        The adoption of Unsupervised Domain Adaptation (UDA) techniques aims to align the distribution of both source and target domain.
       </>
     ),
   },

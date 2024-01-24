@@ -42,6 +42,13 @@ Function to calculate 0.01 and 0.99 percentiles of the bands of planet images. T
 
 Function to get the loaders for LoveDA dataset.
 
+Size of the dataset:
+
+|**Domain**|**Train**|**Validation**|**Test**|
+|-|-|-|-|
+|**Urban**|1,155|677|820|
+|**Rural**|1,366|992|976|
+
 ### Params
 
 ### Outputs
@@ -53,7 +60,25 @@ Function to get the loaders for LoveDA dataset.
   
 ### Source code
 
-```
+```python
+def get_DataLoaders(dir, batch_size, transform, normalization, VI, only_get_DS = False, train_split_size = None, val_split_size = None):
+    """
+        Function to get the loaders for LoveDA dataset.
+
+        Inputs:
+            - domain: List with the scene parameter for the LoveDa dataset. It can include 'rural' and/or 'urban'.
+            - batch_size: Number of images per batch.
+            - transforms: Image augmentations that will be considered.
+            - train_split_size: Amount of images from training split that will be considered. (Float between 0 and 1)
+            - val_split_size: Amount of images from validation split that will be considered. (Float between 0 and 1)
+            - only_get_DS: Boolean for only getting datasets instead of dataloaders.
+
+        Output:
+            - train_loader: Training torch LoveDA data loader
+            - val_loader: Validation torch LoveDA data loader
+            - test_loader: Test torch LoveDA data loader
+    """
+
     if transforms != None:
         train_DS = LoveDA('LoveDA', split = 'train', scene = domain, download = True, transforms = transforms)
     else:

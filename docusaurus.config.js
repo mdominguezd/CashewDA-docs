@@ -106,6 +106,10 @@ const config = {
                 href: 'https://www.linkedin.com/in/mart%C3%ADn-dom%C3%ADnguez-dur%C3%A1n-54b4681b6/',
               },
               {
+                label: 'Website',
+                href: 'https://www.martindominguezduran.com/',
+              },
+              {
                 label: 'Personal Github',
                 href: 'https://github.com/mdominguezd',
               },
@@ -121,7 +125,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Documentation built with Docusaurus.`,
+        copyright: `Documentation built by Martín Domínguez Durán using Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,

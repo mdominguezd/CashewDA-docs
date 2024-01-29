@@ -4,6 +4,10 @@ sidebar_position: 1
 
 # Introduction to the problem
 
+Here you can find all of the documentation for the code used for the development of my MSc. thesis ***Domain Adaptation for mapping cashew crops in Africa***. The repository with the code can be found [**here**](https://github.com/mdominguezd/Thesis_model_training). 
+
+The following subsections describe the problem that I tried to solve during my thesis, hope you find it useful and I am all ears if you have any additional suggestions to improve this project.
+
 ## Food insecurity
 
 Food insecurity is one of the main causes of death in developing countries  (Zaini et al., 2019). In 2022, it is estimated that between 690 and 783 million people suffered hunger in the world (FAO, 2023). These estimations help infer that the world is far from achieving the UN's sustainable development goal of no hunger by 2030. Moreover, food security today is not a question of food scarcity, but rather a by-product of poverty and socio-ecnomic inequality in developing nations (Boliko, 2019). A way to tackle poverty in these countries is by boosting the growth of commodity (cash) crops.

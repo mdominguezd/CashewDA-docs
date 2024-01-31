@@ -17,7 +17,7 @@ Class containing the layers considered for the extraction of features from the 2
 
 This feature extractor can change its size depending on the layer in which it is decided to divide the U-Net into feature extractor and classifier. 
 
-The division of the U-Net was inspired by the implementation done by [brio et al. (2019)](link) for domain adaptation in 3D medical imagery.
+The division of the U-Net was inspired by the implementation done by [brion et al. (2019)](https://www.sciencedirect.com/science/article/pii/S0010482521000639?via%3Dihub) for domain adaptation in 3D medical imagery.
 
 #### Attributes
 
@@ -105,7 +105,7 @@ Class containing the layers considered for the segmentation of the 2D images usi
 
 This classifier can change its size depending on the layer in which it is decided to divide the U-Net into feature extractor and classifier. 
 
-The division of the U-Net was inspired by the implementation done by [brio et al. (2019)](link) for domain adaptation in 3D medical imagery.
+The division of the U-Net was inspired by the implementation done by [brion et al. (2019)](https://www.sciencedirect.com/science/article/pii/S0010482521000639?via%3Dihub) for domain adaptation in 3D medical imagery.
 
 #### Attributes
 
@@ -328,7 +328,7 @@ class UNet(nn.Module):
 
 #### Overview
 
-![UnetDANN](/img/U_Net_DANN.png)
+![UnetDANN](/img/U_Net_DANN.jpg)
 
 #### Attributes 
 

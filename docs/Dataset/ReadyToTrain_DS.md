@@ -53,18 +53,6 @@ def calculate_percentiles(img_folder, samples = 400):
 ## get_DataLoaders()
 
 Function to get the training, validation and test torch.DataLoader or torch.Dataset for a specific dataset. This function gets the images from the [Img_Dataset class](./ReadyToTrain_DS#img_dataset).
-
-#### Size of the dataset:
-
-|**fold**|**Domain**|**Train**|**Validation**|**Test**|
-|-|-|-|-|-|
-|**1**|**IvoryCoast**|8225|411|38|
-|**1**|**Tanzania**|1021|57|31|
-|**2**|**IvoryCoast**|7770|214|337|
-|**2**|**Tanzania**|1142|49|29|
-|**3**|**IvoryCoast**|9267|466|120|
-|**3**|**Tanzania**|1142|40|28|
-
 ### Params
 
 - **dir:** (str) Directory with the name of the data to be used.
@@ -221,8 +209,35 @@ def get_LOVE_DataLoaders(domain = ['urban', 'rural'], batch_size = 4, transforms
 
 ## Img_Dataset
 
-Class to manage the cashew dataset.
+Class to manage the **Cashew dataset**. The Cashew dataset consists of 256x256 [Planet NICFI](https://www.planet.com/nicfi/?gad_source=1&gclid=CjwKCAiAk9itBhASEiwA1my_67JOFQ8L4DPicJ47w-b_bGBjLBM1SymMjL91UsJVmB5jSRwKsoedZxoCb2sQAvD_BwE) images with 4 bands(B, G, R, NIR).
 
+#### Size of the dataset:
+
+|**fold**|**Domain**|**Train**|**Validation**|**Test**|
+|-|-|-|-|-|
+|**1**|**IvoryCoast**|8225|411|38|
+|**1**|**Tanzania**|1021|57|31|
+|**2**|**IvoryCoast**|7770|214|337|
+|**2**|**Tanzania**|1142|49|29|
+|**3**|**IvoryCoast**|9267|466|120|
+|**3**|**Tanzania**|1142|40|28|
+
+#### Normalization
+
+The normalization of the images in the dataset was performed using a linear normalization using the values of the percentiles of 1 and 99 percent. A nice explanation of image normalization can be found on this [medium post](https://medium.com/sentinel-hub/how-to-normalize-satellite-images-for-deep-learning-d5b668c885af). 
+
+The equation used for the normalization is presented below:
+
+$$ IMG_{normalized} = \frac{IMG - Perc_{1\%}}{Perc_{99\%} - Perc_{1\%}} $$
+#### Vegetation indices
+
+Two additional channels can be added to the tensor which are the Normalized Difference Vegetation Index **(NDVI)** 
+
+$$NDVI = \frac{NIR - R}{NIR + R}$$
+
+and the Normalized Difference Water Index **(NDWI)**.
+
+$$ NDWI = \frac{G - NIR}{G+NIR} $$
 ### Attributes
 
 - **self.img_folder** (str) Name of the folder in which the images are stored.
@@ -239,7 +254,7 @@ Method to calculate the number of images in the dataset.
 
 #### plot_imgs()
 
-Method to plot a specific image of the dataset.
+Method to plot a specific image of the dataset. Receives **idx** as the index of the image and **VIs** as a boolean to decide to plot or not the vegetation indices of the images.
 
 #### \_\_getitem\_\_()
 

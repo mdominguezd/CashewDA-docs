@@ -47,6 +47,8 @@ Click this [link](https://www.dropbox.com/scl/fo/ozyb8j2qx21secw2scocq/h?rlkey=1
 
 #### Using bash
 
+See [DS_Download.sh](https://github.com/mdominguezd/Thesis_model_training/blob/main/DS_Download.sh)
+
 ```bash
 #!/bin/bash
 

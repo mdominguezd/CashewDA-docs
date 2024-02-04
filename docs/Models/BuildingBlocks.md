@@ -259,7 +259,11 @@ It inherits all of the attributes and methods from `torch.autograd.Function`.
 
 The function applied to the discriminator gradient during the backward propagation is:
 
-$$ \nabla_{discriminator} = -\lambda \cdot \nabla_{discriminator} $$
+$$
+\nabla_{discriminator} = -\lambda \cdot \nabla_{discriminator} 
+$$
+
+
 The value of $\lambda$ will determine the weight of learning of the discriminator head, during the **Domain Adaptation** phase.
 
 Big shout out to [CuthbertCai](https://github.com/CuthbertCai/pytorch_DANN/tree/master) who had already implemented the gradient reversal function in PyTorch, which I used for my implementation of the [U-Net + DANN](./U_Net#unetdann).
@@ -297,21 +301,20 @@ class GradReverse(torch.autograd.Function):
 
 ## Attention_block
 
-==SHOULD BE EXPLAINED MORE IN DETAIL==
 
-Class containing the implementation of the attention blocks used in the attention U-Net.
+Class containing the implementation of the [attention gates](https://paperswithcode.com/method/attention-gate) used in the attention U-Net. Atention gates help the network focus on targeted regions by supressing feature activations in regions that are not that important.
 
 Big shout out to [LeeJunHyun](https://github.com/LeeJunHyun/Image_Segmentation/blob/master/network.py) whose implementation of the attention gates inspired the ones used in my implementation.
+
 ### Attributes
 
-==Change name of "incoming layer"==
 - **self.F_g:** (int) Number of feature maps entering from the gated signal.
-- **self.F_l:** (int) Number of feature maps entering from the incoming layer.
-- **self.F_int:** (int) Number of feature maps resulting after The convolution on the gated signal **W_g** and the convolution on the incoming layer **W_x**.
+- **self.F_l:** (int) Number of feature maps entering from the input layer.
+- **self.F_int:** (int) Number of feature maps resulting after The convolution on the gated signal **W_g** and the convolution on the input layer **W_x**.
 
 - **self.W_g** (torch.nn.Sequential) Sequential layer with one convolution and one batch normalization layer that will be applied to the gated signal.
-- **self.W_x** (torch.nn.Sequential) Sequential layer with one convolution and one batch normalization that will be applied to the incoming layer.
-- **self.psi** (torch.nn.Sequential) Sequential layer with one convolution, one batch normalization and one sigmoid activation function applied to the result of the addition of the resulting feature maps coming from the gated signal and the incoming layer.
+- **self.W_x** (torch.nn.Sequential) Sequential layer with one convolution and one batch normalization that will be applied to the input layer.
+- **self.psi** (torch.nn.Sequential) Sequential layer with one convolution, one batch normalization and one sigmoid activation function applied to the result of the addition of the resulting feature maps coming from the gated signal and the input layer.
 - **self.relu** (torch.nn.ReLU) ReLU activation function.
 
 ### Methods

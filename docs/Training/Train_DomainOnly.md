@@ -1,3 +1,7 @@
+## Brief description of the submodule
+
+In this submodule, all of the functions used for training the domain-only models are described in detail.
+
 ## evaluate()
 
 Function used to evaluate the segmentation performance of a specified network. It gets the predictions calculated using the network for a specified data loader and calculates the mean loss and accuracy comparing the predictions with the ground truth labels of the loader.

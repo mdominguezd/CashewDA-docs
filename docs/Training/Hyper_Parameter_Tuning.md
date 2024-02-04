@@ -1,3 +1,7 @@
+## Brief description of the submodule
+
+In this submodule the functions used for the selection of hyper-parameters for the training of the [Networks implemented](./U_Net#networks-implemented).
+
 ## HP_Tuning()
 
 Function to execute the hyper-parameter tuning for the [UNet](../Models/U_Net#unet) model on the Cashew Dataset.

@@ -1,19 +1,28 @@
+## Brief description of the submodule
+
+In this submodule all of the classes used for the definition of the loss functions used during training of the networks described in [Networks implemented](./U_Net#networks-implemented).
 ## FocalLoss
 
-Class used to calculate the focal loss used for the backward propagation of the segmentation heads of the [Networks implemented](./U_Net#networks-implemented).
+Class used to calculate the [focal loss](https://paperswithcode.com/method/focal-loss) used for the backward propagation of the segmentation heads of the [Networks implemented](./U_Net#networks-implemented).
 
 The Focal loss can be calculated as:
-==CHECK==
 
-$$ Focal\ loss = -(1-p)^\gamma \cdot \log(p)$$
+$$
+Focal\ loss = -\alpha \cdot (1-p)^\gamma \cdot \log(p)
+$$
+
 Big shout out to [f1recracker](https://gist.github.com/f1recracker/0f564fd48f15a58f4b92b3eb3879149b), whose implementation was adapted to create the focal loss function.
 
 ### Attributes
 
-
+- **gamma:** (float) Hyper-parameter to be tuned which determines how much importance is given to misclassified examples. The higher the value, the higher the importance.
+- **alpha:** (float) Hyper-parameter to be tuned which serves as a weighing factorfor the different classes.
+- **size_average:** (boolean) Boolean to indicate if the funcion returns the mean value or the sum. Default is True.
+- **ignore_index:** (int) Index of the class that will be ignored.
 
 ### Methods
 
+- **forward:** Function indicating the forward stepss to calculate the Focal Loss function for an predicted input and a target tensor.
 
 
 ### Source code

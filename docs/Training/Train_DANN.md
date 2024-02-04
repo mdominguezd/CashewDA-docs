@@ -1,8 +1,8 @@
+## Brief description of the submodule
+
 ## Last meeting
 * [ ] Perform Hyperparameter tuning for UNET DANN in LoveDA dataset and hope to get better results.
 * [ ] Implement the possibility of adding a limited amount of target images to increase UNET DANN performance. (**Semi-supervised**)
-* [x] Continue with code migration (Distance metrics of features)
-* [x] Work at the same time on documentation of the code (Docusaurus)
 
 ## initialize_Unet_DANN()
 

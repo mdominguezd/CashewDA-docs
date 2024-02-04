@@ -1,6 +1,6 @@
 ## Brief description of the submodule
 
-In this submodule the functions used for the selection of hyper-parameters for the training of the [Networks implemented](./U_Net#networks-implemented).
+In this submodule the functions used for the selection of hyper-parameters for the training of the [Networks implemented](../Models/U_Net#networks-implemented).
 
 ## HP_Tuning()
 

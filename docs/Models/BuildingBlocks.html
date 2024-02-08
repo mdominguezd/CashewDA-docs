@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.1.0">
 <title data-rh="true">BuildingBlocks | Domain adaptation for mapping Cashew crops in Africa</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mdominguezd.github.io/CashewDA-docs/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://mdominguezd.github.io/CashewDA-docs/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://mdominguezd.github.io/CashewDA-docs/docs/Models/BuildingBlocks"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="BuildingBlocks | Domain adaptation for mapping Cashew crops in Africa"><meta data-rh="true" name="description" content="Brief description of the submodule"><meta data-rh="true" property="og:description" content="Brief description of the submodule"><link data-rh="true" rel="icon" href="/CashewDA-docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mdominguezd.github.io/CashewDA-docs/docs/Models/BuildingBlocks"><link data-rh="true" rel="alternate" href="https://mdominguezd.github.io/CashewDA-docs/docs/Models/BuildingBlocks" hreflang="en"><link data-rh="true" rel="alternate" href="https://mdominguezd.github.io/CashewDA-docs/docs/Models/BuildingBlocks" hreflang="x-default"><link rel="stylesheet" href="/CashewDA-docs/assets/css/styles.88a5c406.css">
-<script src="/CashewDA-docs/assets/js/runtime~main.f304356e.js" defer="defer"></script>
+<script src="/CashewDA-docs/assets/js/runtime~main.8901bd34.js" defer="defer"></script>
 <script src="/CashewDA-docs/assets/js/main.0bc22614.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -35,10 +35,10 @@
 <p><strong>self.out_channels:</strong> (int) Number of channels that will be obtained with the two convolutions performed.</p>
 </li>
 <li>
-<p><strong>self.mid_channels:</strong> (int) If specified, this will be the number of channels calculated by the first convolution. ==Default== is None.</p>
+<p><strong>self.mid_channels:</strong> (int) If specified, this will be the number of channels calculated by the first convolution. <em>Default</em> is None.</p>
 </li>
 <li>
-<p><strong>self.resunet:</strong> (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not.==Default== is False.</p>
+<p><strong>self.resunet:</strong> (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not. <em>Default</em> is False.</p>
 </li>
 <li>
 <p><strong>self.double_conv</strong> (torch.nn.Sequential) Sequential layer comprising the convolutions, batch normalizations and ReLU activation functions.</p>
@@ -71,7 +71,7 @@
 <p><strong>self.out_channels:</strong> (int) Number of channels that will be obtained with the two convolutions performed.</p>
 </li>
 <li>
-<p><strong>self.resunet:</strong> (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not.==Default== is False.</p>
+<p><strong>self.resunet:</strong> (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not. <em>Default</em> is False.</p>
 </li>
 <li>
 <p><strong>self.maxpool_conv:</strong> (torch.nn.Sequential) Sequential layer comprising the 2D maxpooling and the posterior double convolutions performed.</p>
@@ -92,9 +92,9 @@
 <ul>
 <li><strong>self.in_channels:</strong> (int) Number of channels that the module receives.</li>
 <li><strong>self.out_channels:</strong> (int) Number of channels that will be obtained with the two convolutions performed.</li>
-<li><strong>self.bilinear:</strong> (Boolean) Boolean to indicate if the upsampling method will be either bilinear interpolation or transpose 2D convolutions. ==Default== is False.</li>
-<li><strong>self.attention:</strong> (Boolean) Boolean to indicate if attention gates will be added on the upsampling step. ==Default== is False.</li>
-<li><strong>self.resunet:</strong> (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not.==Default== is False.</li>
+<li><strong>self.bilinear:</strong> (Boolean) Boolean to indicate if the upsampling method will be either bilinear interpolation or transpose 2D convolutions. <em>Default</em> is False.</li>
+<li><strong>self.attention:</strong> (Boolean) Boolean to indicate if attention gates will be added on the upsampling step. <em>Default</em> is False.</li>
+<li><strong>self.resunet:</strong> (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not. <em>Default</em> is False.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="methods-2">Methods<a href="#methods-2" class="hash-link" aria-label="Direct link to Methods" title="Direct link to Methods">​</a></h3>
 <ul>

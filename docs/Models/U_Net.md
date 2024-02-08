@@ -10,7 +10,8 @@ And secondly build the models used for segmentation [U-Net](#unet) and domain ad
 
 ## Major blocks
 
-==ADD IMAGE OF UNET and UNET DANN dividing blocks==
+![Major blocks](/img/MajorBlocks.png)
+
 ### FE
 
 Class containing the layers considered for the extraction of features from the 2D images. 
@@ -24,9 +25,9 @@ The division of the U-Net was inspired by the implementation done by [brion et a
 - **self.n_channels:** (int) Number of channels \[bands\] on the images that will enter the network.
 - **self.starter:** (int) Number of feature maps obtained from the first double convolution performed. The number of feature maps obtained for every double convolution will be then calculated multiplying this value by $2ˆn$, where $n$ is the level in the U_net, starting from 0 in the upmost layer and 2 in the lowest layer.
 - **self.up_layer:** (int : \[0-4\]) Number indicating the layer in which the network is divided into Feature Extractor and Classifier.
-- **self.bilinear:** (Boolean) Boolean indicating the method for upsampling in the expanding path. ==Default== is True.
-- **self.attention:** (Boolean) Boolean to indicate if attention gates will be added on the upsampling step. ==Default== is False.
-- **self.resunet:** (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not.==Default== is False.
+- **self.bilinear:** (Boolean) Boolean indicating the method for upsampling in the expanding path. *Default* is True.
+- **self.attention:** (Boolean) Boolean to indicate if attention gates will be added on the upsampling step. *Default* is False.
+- **self.resunet:** (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not. *Default* is False.
 
 #### Methods
 
@@ -114,10 +115,10 @@ The division of the U-Net was inspired by the implementation done by [brion et a
 
 - **self.starter:** (int) Number of feature maps obtained from the first double convolution performed. The number of feature maps obtained for every double convolution will be then calculated multiplying this value by $2ˆn$, where $n$ is the level in the U_net, starting from 0 in the upmost layer and 2 in the lowest layer.
 - **self.up_layer:** (int : \[0-4\]) Number indicating the layer in which the network is divided into Feature Extractor and Classifier.
-- **self.bilinear:** (Boolean) Boolean indicating the method for upsampling in the expanding path. ==Default== is True.
-- **self.n_classes:** (int) Number of classes in which the images will be classified. ==Default== is 2.
-- **self.attention:** (Boolean) Boolean to indicate if attention gates will be added on the upsampling step. ==Default== is False.
-- **self.resunet:** (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not.==Default== is False.
+- **self.bilinear:** (Boolean) Boolean indicating the method for upsampling in the expanding path. *Default* is True.
+- **self.n_classes:** (int) Number of classes in which the images will be classified. *Default* is 2.
+- **self.attention:** (Boolean) Boolean to indicate if attention gates will be added on the upsampling step. *Default* is False.
+- **self.resunet:** (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not. *Default* is False.
 
 #### Methods
 
@@ -202,9 +203,9 @@ The discriminator first downsamples the features using the same class [Down](./B
 - **self.initial_features:** (int) Number of features that will go into the final fully connected layer.
 - **self.starter:** (int) Number of feature maps obtained from the first double convolution performed. The number of feature maps obtained for every double convolution will be then calculated multiplying this value by $2ˆn$, where $n$ is the level in the U_net, starting from 0 in the upmost layer and 2 in the lowest layer.
 - **self.up_layer:** (int : \[0-4\]) Number indicating the layer in which the network is divided into Feature Extractor and Classifier.
-- **self.bilinear:** (Boolean) Boolean indicating the method for upsampling in the expanding path. ==Default== is True.
-- **self.resunet:** (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not.==Default== is False.
-- **self.grad_rev_w:** (float) Number with the learning weight of the discriminator head. ==Default== is 1.
+- **self.bilinear:** (Boolean) Boolean indicating the method for upsampling in the expanding path. *Default* is True.
+- **self.resunet:** (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not. *Default* is False.
+- **self.grad_rev_w:** (float) Number with the learning weight of the discriminator head. *Default* is 1.
 
 #### Methods
 
@@ -269,17 +270,18 @@ class D(nn.Module):
 Class containing the layers used to create the custom UNet used to segment 2D images. An overview of the network can be seen [here](#overview). 
 
 #### Overview
-==IMAGE==
+
+![UnetDANN](/img/U_Net.png)
 
 #### Attributes
 
 - **self.n_channels:** (int) Number of channels \[bands\] on the images that will enter the network.
 - **self.n_classes:** (int) Number of classes in which the images will be classified.
-- **self.bilinear:** (Boolean) Boolean indicating the method for upsampling in the expanding path. ==Default== is True.
-- **self.starter:** (int) Number of feature maps obtained from the first double convolution performed. The number of feature maps obtained for every double convolution will be then calculated multiplying this value by $2ˆn$, where $n$ is the level in the U_net, starting from 0 in the upmost layer and 2 in the lowest layer. ==Default== is 8.
-- **self.up_layer:** (int : \[0-4\]) Number indicating the layer in which the network is divided into Feature Extractor and Classifier. ==Default== is 3.
-- **self.attention:** (Boolean) Boolean to indicate if attention gates will be added on the upsampling step. ==Default== is False.
-- **self.resunet:** (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not.==Default== is False.
+- **self.bilinear:** (Boolean) Boolean indicating the method for upsampling in the expanding path. *Default* is True.
+- **self.starter:** (int) Number of feature maps obtained from the first double convolution performed. The number of feature maps obtained for every double convolution will be then calculated multiplying this value by $2ˆn$, where $n$ is the level in the U_net, starting from 0 in the upmost layer and 2 in the lowest layer. *Default* is 8.
+- **self.up_layer:** (int : \[0-4\]) Number indicating the layer in which the network is divided into Feature Extractor and Classifier. *Default* is 3.
+- **self.attention:** (Boolean) Boolean to indicate if attention gates will be added on the upsampling step. *Default* is False.
+- **self.resunet:** (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not. *Default* is False.
 
 #### Methods
 
@@ -326,9 +328,11 @@ class UNet(nn.Module):
 
 ### UNetDANN
 
+Class containing the layers used to create the custom UNet-DANN network used to perform domain adaptation for sementing 2D images. This network uses the gradient reversal proposed by [Ganin et al. (2016)](https://jmlr.org/papers/volume17/15-239/15-239.pdf) on the [U-Net](#unet) semantic segmentation model.
+
 #### Overview
 
-![UnetDANN](/img/U_Net_DANN.jpg)
+![UnetDANN](/img/U_Net_DANN.png)
 
 #### Attributes 
 

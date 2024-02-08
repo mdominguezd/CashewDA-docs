@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 ## Brief description of the submodule
 
 ## Last meeting

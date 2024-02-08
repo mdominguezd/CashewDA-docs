@@ -23,8 +23,8 @@ Moreover, an option to include residual connections in the double convolutions i
 
 - **self.in_channels:** (int) Number of channels that the module receives.
 - **self.out_channels:** (int) Number of channels that will be obtained with the two convolutions performed.
-- **self.mid_channels:** (int) If specified, this will be the number of channels calculated by the first convolution. ==Default== is None.
-- **self.resunet:** (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not.==Default== is False.
+- **self.mid_channels:** (int) If specified, this will be the number of channels calculated by the first convolution. *Default* is None.
+- **self.resunet:** (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not. *Default* is False.
 
 
 - **self.double_conv** (torch.nn.Sequential) Sequential layer comprising the convolutions, batch normalizations and ReLU activation functions.
@@ -86,7 +86,7 @@ It inherits the attributes and methods of `torch.nn.Module`.
 
 - **self.in_channels:** (int) Number of channels that the module receives.
 - **self.out_channels:** (int) Number of channels that will be obtained with the two convolutions performed.
-- **self.resunet:** (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not.==Default== is False.
+- **self.resunet:** (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not. *Default* is False.
 
 - **self.maxpool_conv:** (torch.nn.Sequential) Sequential layer comprising the 2D maxpooling and the posterior double convolutions performed.
 
@@ -129,9 +129,9 @@ This class inherits the attributes and methods of `torch.nn.Module`.
 
 - **self.in_channels:** (int) Number of channels that the module receives.
 - **self.out_channels:** (int) Number of channels that will be obtained with the two convolutions performed.
-- **self.bilinear:** (Boolean) Boolean to indicate if the upsampling method will be either bilinear interpolation or transpose 2D convolutions. ==Default== is False.
-- **self.attention:** (Boolean) Boolean to indicate if attention gates will be added on the upsampling step. ==Default== is False.
-- **self.resunet:** (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not.==Default== is False.
+- **self.bilinear:** (Boolean) Boolean to indicate if the upsampling method will be either bilinear interpolation or transpose 2D convolutions. *Default* is False.
+- **self.attention:** (Boolean) Boolean to indicate if attention gates will be added on the upsampling step. *Default* is False.
+- **self.resunet:** (Boolean) Boolean used to indicate if the double convolution will have a residual connection or not. *Default* is False.
 
 ### Methods
 

@@ -8,12 +8,12 @@ Function to calculate 0.01 and 0.99 percentiles of the bands of planet images. T
 
 ### Params
 
-* **img_folder:** *(list)* The name of the folder with the images.
-* **samples:** *(integer)* The number of images to take to calculate these percentiles, for computing reasons not all images are considered.
+* **img_folder:** (list) The name of the folder with the images.
+* **samples:** (integer) The number of images to take to calculate these percentiles, for computing reasons not all images are considered.
 
 ### Outputs
 
-* **vals:** *(numpy.ndarray)* The mean 1% and 99% quantiles for the images analysed.
+* **vals:** (numpy.ndarray) The mean 1% and 99% quantiles for the images analysed.
 
 ### Dependencies used
 
@@ -228,16 +228,22 @@ The normalization of the images in the dataset was performed using a linear norm
 
 The equation used for the normalization is presented below:
 
-$$ IMG_{normalized} = \frac{IMG - Perc_{1\%}}{Perc_{99\%} - Perc_{1\%}} $$
+$$
+IMG_{normalized} = \frac{IMG - Perc_{1\%}}{Perc_{99\%} - Perc_{1\%}}
+$$
 #### Vegetation indices
 
 Two additional channels can be added to the tensor which are the Normalized Difference Vegetation Index **(NDVI)** 
 
-$$NDVI = \frac{NIR - R}{NIR + R}$$
+$$
+NDVI = \frac{NIR - R}{NIR + R}
+$$
 
 and the Normalized Difference Water Index **(NDWI)**.
 
-$$ NDWI = \frac{G - NIR}{G+NIR} $$
+$$ 
+NDWI = \frac{G - NIR}{G+NIR}
+$$
 ### Attributes
 
 - **self.img_folder** (str) Name of the folder in which the images are stored.

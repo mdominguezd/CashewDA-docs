@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 ## Brief description of the submodule
 
 In this submodule the functions used for the selection of hyper-parameters for the training of the [Networks implemented](../Models/U_Net#networks-implemented).
@@ -9,12 +12,12 @@ Function to execute the hyper-parameter tuning for the [UNet](../Models/U_Net#un
 It receives the possible values of the hyperparameters as lists and returns a dataframe with the results of each possible combination. 
 
 The metrics considered are:
-- **Validation mIOU:** Highest value of mIOU obtained during training.
+- **Validation F1-Score:** Highest value of validation F1-Score obtained during training.
 - **Training time:** Time spent on training.
 - **Training rho:** Spearman coefficient to check that the training accuracy is continuously increasing with the epochs.
 - **NO Learning:** Boolean indicating if accuracy did improve compared to the one calculated in epoch 0.
 
-The calculation of each of the metrics is done using **12 epochs** and a **Linear normalization** of the Cashew dataset. For more information of this dataset go [here](../Dataset/ReadyToTrain_DS).
+The calculation of each of the metrics is done using **20 epochs** and a **Linear normalization** of the Cashew dataset. For more information of this dataset go [here](../Dataset/ReadyToTrain_DS).
 
 ### Params
 - **dir:** (dir) Directory with the dataset to be used.
@@ -28,6 +31,8 @@ The calculation of each of the metrics is done using **12 epochs** and a **Linea
 - **decay:** (list) List with values of the decay rate of learning rate.
 - **atts:** (list) List with booleans for inclusion or not of Attention gates.
 - **res:** (list) List with booleans for inclusion or not of residual connections on the double convolutional blocks.
+- **tr_size:** (float: \[0-1\]) Amount of training set considered for HP tuning.
+- **val_size:** (float: \[0-1\]) Amount of validation set considered for HP tuning.
 ### Outputs
 
 - **HP_values:** (pandas.DataFrame) Dataframe with the results of each iteration of the hyperparameter tuning.
@@ -64,6 +69,8 @@ def HP_Tuning(dir, BS, LR, STCh, MU, Bi, gamma, VI, decay, atts, res, tr_size = 
             - decay: decay rate of learning rate.
             - atts: Inclusion or not of Attention gates.
             - res: Inclusion or not of residual connections on convolutional blocks.
+            - tr_size: Amount of training set considered.
+            - val_size: Amount of validation et cosidered.
             
         Output:
             - HP_values: (pandas.DataFrame) Dataframe with the results of each iteration of the hyperparameter tuning.
@@ -112,7 +119,7 @@ Function to execute the hyper-parameter tuning for the [UNet](../Models/U_Net#un
 
 It receives the possible values of the hyperparameters as lists and returns a dataframe with the results of each possible combination. 
 
-The metrics considered are:
+The metrics used are:
 - **Validation mIOU:** Highest value of mIOU obtained during training.
 - **Training time:** Time spent on training.
 - **Training rho:** Spearman coefficient to check that the training accuracy is continuously increasing with the epochs.
@@ -131,7 +138,8 @@ The calculation of each of the metrics is done using **15 epochs**.
 - **decay:** (list) List with values of the decay rate of learning rate.
 - **atts:** (list) List with booleans for inclusion or not of Attention gates.
 - **res:** (list) List with booleans for inclusion or not of residual connections on the double convolutional blocks
-
+- **tr_size:** (float: \[0-1\]) Amount of training set considered for HP tuning. *Default* is 0.15.
+- **val_size:** (float: \[0-1\]) Amount of validation set considered for HP tuning. *Default* is 0.75.
 ### Outputs
 
 - **HP_values:** (pandas.DataFrame) Dataframe with the results of each iteration of the hyperparameter tuning.

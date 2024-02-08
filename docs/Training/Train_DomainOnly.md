@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 ## Brief description of the submodule
 
 In this submodule, all of the functions used for training the domain-only models are described in detail.
@@ -10,7 +14,7 @@ Function used to evaluate the segmentation performance of a specified network. I
 - **net:** (torch.nn.Module) Network class used to get the segmentation predictions.
 - **validate_loader:**  (torch.nn.DataLoader) Data loader of which the mean loss and accuracy will be calculated.
 - **loss_function:** (torch.nn.Module) Loss function used during the training of the network.
-- **accu_function:** (torch.nn.Module==?==) Function to calculate the mean accuracy of the network on validate_loader. ==Default== is BinaryF1Score()
+- **accu_function:** (torchmetrics.classification) Function to calculate the mean accuracy of the network on validate_loader. *Default* is BinaryF1Score()
 
 ### Outputs
 

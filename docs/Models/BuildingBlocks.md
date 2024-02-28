@@ -268,6 +268,10 @@ The value of $\lambda$ will determine the weight of learning of the discriminato
 
 Big shout out to [CuthbertCai](https://github.com/CuthbertCai/pytorch_DANN/tree/master) who had already implemented the gradient reversal function in PyTorch, which I used for my implementation of the [U-Net + DANN](./U_Net#unetdann).
 
+### Overview
+
+![](https://miro.medium.com/v2/resize:fit:828/format:webp/1*piqiA10qR6b7XpCNVi2eRQ.png)
+
 ### Attributes
 
 - **constant:** (Float) Number indicating the weight of learning done by the discriminator head in [U-Net + DANN](./U_Net#unetdann).

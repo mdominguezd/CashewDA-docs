@@ -301,10 +301,13 @@ class GradReverse(torch.autograd.Function):
 
 ## Attention_block
 
-
-Class containing the implementation of the [attention gates](https://paperswithcode.com/method/attention-gate) used in the attention U-Net. Atention gates help the network focus on targeted regions by supressing feature activations in regions that are not that important.
+Class containing the implementation of the [attention gates](https://paperswithcode.com/method/attention-gate) used in the attention U-Net. Atention gates help the network focus on targeted regions by supressing feature activations in irrelevant regions, which reduces the number of redundant features brought across.
 
 Big shout out to [LeeJunHyun](https://github.com/LeeJunHyun/Image_Segmentation/blob/master/network.py) whose implementation of the attention gates inspired the ones used in my implementation.
+
+### Overview
+
+![](https://miro.medium.com/v2/resize:fit:828/format:webp/1*wCeLHKdHbIkwry36Nx5HrA.png)
 
 ### Attributes
 

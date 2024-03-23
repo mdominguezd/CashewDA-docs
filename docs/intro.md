@@ -32,6 +32,7 @@ In this thesis, domain adaptation techniques were implemented to semantic segmen
 
 ## Research questions
 
-* How much does the domain shift between source and target affect the accuracy of a cashew crop mapping model trained only with source data and applied in the target domain?
+* What are the underlying factors contributing to the domain shift between source and target and how much does it affect the accuracy of a cashew crop mapping model trained only with source data and applied in the target domain?
 * To what extent do adversarial domain adaptation methods impact the accuracy and the generalization capability of semantic segmentation models used for cashew crop mapping?
+* How can a web application be designed to evaluate cashew crop mapping models in Africa and encourage user participation in generating annotated data?
 

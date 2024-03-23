@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Introduction to the problem
 
-Here you can find all of the documentation for the code used for the development of my MSc. thesis ***Domain Adaptation for mapping cashew crops in Africa***. The repository with the code can be found [**here**](https://github.com/mdominguezd/Thesis_model_training). 
+Here you can find all of the documentation for the code used for the development of my MSc. thesis ***Bridging domains: Assessment of Domain Adaptation methods for mapping Cashew crops in Africa***. The repository with the code can be found [**here**](https://github.com/mdominguezd/Thesis_model_training). 
 
 The following subsections describe the problem that I tried to solve during my thesis, hope you find it useful and I am all ears if you have any additional suggestions to improve this project.
 
